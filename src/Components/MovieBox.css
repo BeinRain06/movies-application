@@ -1,0 +1,39 @@
+:root {
+  --spacer: 0.8rem;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mvi_content {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  inline-size: 98vw;
+  height: 350px;
+  margin: 0 auto;
+}
+
+ul.movies_library {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 22%;
+  padding: 0 var(--spacer) var(--spacer);
+  gap: var(--spacer);
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.snaps_inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--spacer);
+}
+
+.snaps_inline > * {
+  scroll-snap-align: start;
+}

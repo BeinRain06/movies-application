@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.head_title {
+  position: relative;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}

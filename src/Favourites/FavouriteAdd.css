@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btn_fav_content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 3; */
+}
+
+.fav_title {
+  font-size: 12px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
