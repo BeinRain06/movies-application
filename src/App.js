@@ -32,7 +32,7 @@ import "./App.css";
 function App() {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState(() => {
-    return JSON.parse(localStorage.getItem("movies-favourites")) || "";
+    return JSON.parse(sessionStorage.getItem("movies-favourites")) || "";
   });
 
   const [searchValue, setSearchValue] = useState("time");
@@ -59,21 +59,12 @@ function App() {
     setFavourites(newFavourite);
   };
 
-  /*  const getDataFromLocalStorage = () => {
-    const movies =
-      localStorage.getItem("movies-favourites") === null
-        ? []
-        : JSON.parse(localStorage.getItem("movies-favourites"));
-
-    return movies;
-  }; */
-
   useEffect(() => {
     fetchMovies(searchValue);
   }, [searchValue]);
 
   useEffect(() => {
-    localStorage.setItem("movies-favourites", JSON.stringify(favourites));
+    sessionStorage.setItem("movies-favourites", JSON.stringify(favourites));
   }, [favourites]);
 
   return (
