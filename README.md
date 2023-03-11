@@ -131,5 +131,7 @@ Sufa Digital : Udemy course in react -movie-app
 This project always remember the Team :
 
 -Kevin Powell: with his easy explanation of properties of css
+
 -Sufa Digital: with his light how to achieve our project
+
 -CopyCat Team: with a slight articlr article that unlock key of localStorage in Our Project...
