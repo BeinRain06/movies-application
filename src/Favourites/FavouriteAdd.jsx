@@ -5,7 +5,7 @@ function FavouriteAdd(props) {
   return (
     <div className="btn_fav_content">
       <h3 className="fav_title">Add To Favourites</h3>
-      <FavoriteIcon htmlColor="red" fontSize="small" />
+      <FavoriteIcon htmlColor="red" fontSize="10px" />
     </div>
   );
 }

@@ -31,7 +31,10 @@ import "./App.css";
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [favourites, setFavourites] = useState([]);
+  const [favourites, setFavourites] = useState(() => {
+    return JSON.parse(localStorage.getItem("movies-favourites")) || "";
+  });
+
   const [searchValue, setSearchValue] = useState("time");
 
   const fetchMovies = async (searchValue) => {
@@ -56,9 +59,22 @@ function App() {
     setFavourites(newFavourite);
   };
 
+  /*  const getDataFromLocalStorage = () => {
+    const movies =
+      localStorage.getItem("movies-favourites") === null
+        ? []
+        : JSON.parse(localStorage.getItem("movies-favourites"));
+
+    return movies;
+  }; */
+
   useEffect(() => {
     fetchMovies(searchValue);
   }, [searchValue]);
+
+  useEffect(() => {
+    localStorage.setItem("movies-favourites", JSON.stringify(favourites));
+  }, [favourites]);
 
   return (
     <div className="App">

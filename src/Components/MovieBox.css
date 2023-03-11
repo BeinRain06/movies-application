@@ -7,13 +7,32 @@
   padding: 0;
 }
 
+/* scrollbar design */
+::-webkit-scrollbar {
+  width: 2em;
+  height: 2em;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(84, 85, 84);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(36, 37, 36);
+  border: 0.25em solid rgb(84, 85, 84);
+}
+/* firefox support */
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: rgb(36, 37, 36) rgb(84, 85, 84);
+    scrollbar-width: auto;
+  }
+}
+
 .mvi_content {
   position: relative;
   top: 0;
   left: 0;
-  transform: translate(0, 0);
   inline-size: 98vw;
-  height: 350px;
+  height: calc(18rem);
   margin: 0 auto;
 }
 
@@ -22,7 +41,7 @@ ul.movies_library {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 22%;
-  padding: 0 var(--spacer) var(--spacer);
+  padding: var(--spacer) var(--spacer) 0;
   gap: var(--spacer);
   list-style: none;
   overflow-x: auto;
@@ -36,4 +55,37 @@ ul.movies_library {
 
 .snaps_inline > * {
   scroll-snap-align: start;
+}
+
+/* Media queries */
+@media (max-width: 945px) {
+  .mvi_content {
+    inline-size: 98vw;
+    height: calc(12rem);
+  }
+
+  ul.movies_library {
+    grid-auto-columns: 24%;
+  }
+}
+
+@media (max-width: 715px) {
+  .mvi_content {
+    inline-size: 98vw;
+    height: calc(9rem);
+  }
+
+  ul.movies_library {
+    grid-auto-columns: 30%;
+  }
+}
+
+@media (max-width: 460px) {
+  .mvi_content {
+    inline-size: 98vw;
+    height: calc(16rem);
+  }
+  ul.movies_library {
+    grid-auto-columns: 70%;
+  }
 }

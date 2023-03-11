@@ -2,11 +2,11 @@
   position: relative;
   width: 100vw;
   background-color: rgb(27, 24, 24);
+  padding: 2rem 0.8rem;
 }
 
 .App_container {
   width: 100%;
-  margin: 0 2rem;
 }
 .movies_container {
   position: relative;
@@ -25,4 +25,12 @@
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+}
+
+@media (max-width: 460px) {
+  .App_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

@@ -18,3 +18,9 @@
   text-align: center;
   color: rgb(255, 255, 255);
 }
+
+@media (max-width: 945px) {
+  .fav_title {
+    font-size: 8px;
+  }
+}

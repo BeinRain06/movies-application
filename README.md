@@ -1,123 +1,135 @@
-# Frontend Mentor - Calculator app solution
+# Movie Application
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+Sideland : **## Movie Application**
 
-## Table of contents
+> ### Overview :
 
-- [Frontend Mentor - Calculator app solution](#frontend-mentor---calculator-app-solution)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-    - [Useful resources](#useful-resources)
-  - [Author](#author)
+- movie-application are a good instance project to use cards slider.
+  it is one of the most popular project that refers to website where you can buy
+  or watch movie online, like Netflix,justwatch.tubitv and many others. I think is one
+  those project to start as a beginners in react. It is a friendly opening project.
 
-## Overview
+## Interest
 
-Whenever you have many tasks operations to achieve in a scientist work or a commercial activity you need Calculator. One of the primary and great invention first made by Henry Pascal. This small devices help fastly to do operation from addition to divison of numbers. Our project aims to reproduce this gadgets in a App that you can eaily open in you phone and perform calculation in whatever you want.
+You might want to spot how to use:
 
-With this the probability to makes errors through calculation will be reduce . we propose three background color themes to apply to customiwe each time your calculator to personalize your preference and experience each time you will be using the app.
+- -useState Hook one of the most used state of react using destructuring syntax of javascript
+  like example:
+  const[favourites, setFavourites] = useState([])
 
-### The challenge
-
-Users should be able to:
-
-- See the size of the elements adjust based on their device's screen size
-- Perform mathmatical operations like addition, subtraction, multiplication, and division
-- Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
-
-### Screenshot
-
-![Mobile_theme1](./Mobile_theme1.png)
+- -useEffect Hook used for updating additional codes REACT-DOM everytime some change apply to a specific variable or group of
+  set variables is passed in a second parameter as **array** (ex: [], [data], [data, searchValue], ...)
 
 ### Links
 
-- Solution URL: [https://github.com/BeinRain06/calculator-app-mini.git](https://github.com/BeinRain06/calculator-app-mini.git)
-- Live Site URL: [https://beinrain06.github.io/calculator-app-mini/](https://beinrain06.github.io/calculator-app-mini/)
+- Solution URL: [https://github.com/BeinRain06/movies-application.git](https://github.com/BeinRain06/movies-application.git)
+- Live Site URL: [https://beinrain06.github.io/movies-application/](https://beinrain06.github.io/movies-application/)
 
-## My process
+## Description : \* challenge issue
 
-### Built with
+- i faced difficulty in useEffect Hook because inside callBack function of UseEffect() i used **return** forbidden
+- i at the same level had difficulty first to pass entire components as <FavouriteToAdd/> and <FavouriteToRemove/> inside <MovieBox/> component. I finally figure out that i have to pass these components as simple props and at the final stage zhere the components will be used to redefined them as components : <FavouriteComponent/>
 
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+## CSS Structures:
 
-### What I learned
+> - <App/> Component , three main containers :
+>
+> -App_header
+> -App_intermediary_header
+> -movies_container
 
-This project Calculator-App made me learn how it's important to organiwe your projects in functions if you want to process and obtained the result required.
-This is an App Calculator Build with React the simplicity of writing this kind of App with javascript (or _JSX_) is very delightful because to style static App with react stand easy. the static part is easy but to style the operating part someone need to take good care of how javascript can be transcribed in react and like is a library it has powerful function . I don't feel i have take potential of great functions in react; still learning . This app is made with basic methodof React hopem it would give some beautiful render to your eyes.
+**Picture**
 
-_updateAndDisplayNuumber_
+---
 
-this is first and ;ost important function to enable our app to display on screen typed key.
-here is the snippets code that allows to do that:
+![./Desktop-movie-app.png](./Desktop-movie-app.png)
 
-```js
-updateAndDisplayNumber(e) {
-    this.expectReset();
+---
 
-    if (e.target.className === "single_btn btn_number") {
-      if (!this.state.isOperatingSignClicked) {
-        this.setState({
-          previousNumber: this.state.previousNumber.concat(e.target.value),
-          result: parseFloat(this.state.previousNumber.concat(e.target.value)),
-        });
-      } else if (this.state.isOperatingSignClicked) {
-        this.setState({
-          currentNumber: this.state.currentNumber.concat(e.target.value),
-          result: parseFloat(this.state.currentNumber.concat(e.target.value)),
-        });
-      }
-    }
-  }
-}
-```
+# What I learned
 
-_make button DEL function_
-i learned with sackoverflow and w3schools that using `slice(0, -1)` or `slice(0, -1) or slice(0, stringName.length) ` is the means to remove the last character you entered but to do so you need to update each time our two mains operating number that i named here `previousNumber`
-(number before the oparatimg sign) and `currentNumber` (after the operating sign) through the function handleOperation(), that store value(=> previousNumber) and change the cap of vvalue to receive now(=> currentNumber).
+### React Hook Enhanced
 
-_define multiple states values_
-because we have so many conditions that check states of our number when running i our functions . Remember **each condition statement** has to be **unique** if notm functions having same conditional statements zill made working one particular function especially the first function to call the conditional statement and will not allow **others functions** to change **state of values stored** in the `state Constructor` of **Components** concerned.
+**_useState Hook_** one of the most used state of react using destructuring syntax of javascript
+_like example_: const[favourites, setFavourites] = useState([]);
+_ favourites : is a variable
+_ setFavourites : function to change the above variable (favourites)
+_ [] : empty array - initial state value of _ favourites \*
 
-That is why ze have several properties in every React Component we created.
-Hope that makes sense to you.
+>
 
-_mains functions we need through our process_
+**_useEffect Hook_** used for updating additional codes REACT-DOM everytime some change apply to a specific variable or group of set variables is passed in a second parameter as `array` (ex: [], [data], [data, searchValue], ...)
 
-**linked flow**
+- _sample_ : useEffect(Callback function, [state])
 
-- updateAndDisplayNumber()
-- handleOperation()
-- expectReset()
-- giveResult
+* **example**: useEffect(() => {fetchMovies(searchValue)}, [searchValue]);
 
-**independent flow**
--handleDeletion()
--handleReset()
--handleResult()
+  > tip : don't use any **return** inside the useEffect Hook
 
-### Continued development
+> fetchMovies(searchvalue) : function fecthMovies with argument -searchvalue
+> [searchValue] : var _searchValue_ that makes re-render of REACT-DOM whenvever its change.
 
-Manage and create an App that fetch Data and perform calculations will be a good move to deal with external data, where sometimes we need to implement differents couple actions given the results obtained in the field like automation. Having and interactive App will give us fun while using it.
+### javaScript Enhanced
 
-### Useful resources
+- **map()** method javascript returns a new Array with value passed as argument when looping at an array
 
-- [bobbyhadz.com](https://bobbyhadz.com/blog/javascript-get-ele;ent-by-data-attribute) - this website recall use how to call data-attribute when needed im javascript.
-- [section.io](https://www.section.io/engineering-education/building-a-calculator-a-javascripts-projects-for-beginners/) - Give us Clues how to set our own functions along this project.
-- - [scaler.com](https://www.scaler.com/topics/remove-last-character-from-string-javascript) - scaler.com explains easily the differents method we might use to **remove last character of a string**
+  > e.g: const myMovies = movies.map((movie) => {
 
-## Author
+                     return (
+                       <MovieCart key={movie.imdbID} movie={movie}/>
+                     )
+                   });
 
-- Website - [Ngouend Raoul Gerard](https://www.your-site.com)
-- Frontend Mentor - [https://www.frontendmentor.io/profile/BeinRain06](https://www.frontendmentor.io/profile/BeinRain06)
-- Twitter - [https://twitter.com/nest_Ngoueni](https://twitter.com/nest_Ngoueni)
+- **filter()** method javascript returns a nez array with value that meet conditions returned inside
+  > e.g: const newFavourite = favourites.filter((favourite) => favourite.imdbID !== movie.imdbID );
+
+### utilities Materials:
+
+    -Materials icons [https://mui.com/material-ui/material-icons/](https://mui.com/material-ui/material-icons/)
+
+### Mobile Responsiveness
+
+    - Mobile reponsiveness for mobile max-width: 475px ,max-width: 715px,
+
+**Picture**
+
+---
+
+![./Mobile-movie-app.png](./Mobile-movie-app.png)
+
+---
+
+## Callback History:
+
+- Age of Internet. The industry of movies has grown in a new look with the release of devices
+  able to treat and render beautiful images. With people so capable on digitalization and the interconnection of the
+  world with internet the lead of movies online website becomes a trend for the marketing of movies.
+  Before we remember we have to have walk on the street and bumps into a movie trailer, or watch
+  a commercials ads at TV, read news articles, magazine ads to be glad to discover our upcoming preffered movies.
+  Now you could buy, watch movies online via your mobile phone computer and so others without a need of a TV,
+  or going back when dreaming where so capable to see the walk at the cinema and in the shadow room holding to one epic
+  scene in the film tells your partner that you have been in love for him/her funny right.
+  So Good!
+
+**1975**. _The kodal Digital Cameram first digital Camera invented
+by Steven Sasson recorded
+black and white image on a cassette tape..._
+
+## Useful Resources :
+
+kevin Powell : [video: 'create a horizontal media scroller with css' ] : was my base to achieve my horizontal media scroller with just css
+
+Copycat : ['https://www.copycat.dev/blog/react-localstorage/'] : helps me make my localstorage item persist in my website app
+
+LogRocket: ['https://blog.logrocket.com/create-carousel-react-slick/#:~:text=React%20Slick%20is%20a%20great,some%20%of20%its%20main%20features'] >
+allows me to understand how to implement react-slick for achieving card sliders in react-app
+but didn't work for my case due to issue inport _css Slick-Carousel_
+Sufa Digital : Udemy course in react -movie-app
+
+## Acknowledge:
+
+This project always remember the Team :
+
+-Kevin Powell: with his easy explanation of properties of css
+-Sufa Digital: with his light how to achieve our project
+-CopyCat Team: with a slight articlr article that unlock key of localStorage in Our Project...

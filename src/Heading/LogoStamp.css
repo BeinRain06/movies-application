@@ -10,4 +10,35 @@
   margin: 1rem 0;
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
+  letter-spacing: 0px;
+  transition: all 400ms ease-in-out;
+}
+.head_title:hover {
+  letter-spacing: 3px;
+}
+
+/* Media queries */
+
+@media (max-width: 945px) {
+  .section_title {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 715px) {
+  .section_title {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 460px) {
+  .head_title {
+    border-bottom: 1px solid transparent;
+    margin: 0.2rem 0;
+  }
+  .section_title {
+    font-size: 0.9em;
+    padding: 0.2rem 0 1rem;
+    text-decoration: underline;
+  }
 }
