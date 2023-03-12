@@ -32,7 +32,7 @@ import "./App.css";
 function App() {
   const [movies, setMovies] = useState([]);
   const [favourites, setFavourites] = useState(() => {
-    return JSON.parse(sessionStorage.getItem("movies-favourites")) || "";
+    return JSON.parse(localStorage.getItem("movies-favourites")) ?? [];
   });
 
   const [searchValue, setSearchValue] = useState("time");
@@ -64,7 +64,7 @@ function App() {
   }, [searchValue]);
 
   useEffect(() => {
-    sessionStorage.setItem("movies-favourites", JSON.stringify(favourites));
+    localStorage.setItem("movies-favourites", JSON.stringify(favourites));
   }, [favourites]);
 
   return (
