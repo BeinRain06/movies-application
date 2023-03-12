@@ -9,8 +9,7 @@
 
 /* scrollbar design */
 ::-webkit-scrollbar {
-  width: 2em;
-  height: 2em;
+  height: 0.6em;
 }
 ::-webkit-scrollbar-track {
   background-color: rgb(84, 85, 84);
