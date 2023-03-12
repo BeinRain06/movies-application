@@ -135,3 +135,8 @@ This project always remember the Team :
 -Sufa Digital: with his light how to achieve our project
 
 -CopyCat Team: with a slight articlr article that unlock key of localStorage in Our Project...
+
+## Author
+
+- Frontend Mentor - [https://www.frontendmentor.io/profile/BeinRain06](https://www.frontendmentor.io/profile/BeinRain06)
+- Twitter - [https://twitter.com/nest_Ngoueni](https://twitter.com/nest_Ngoueni)
